@@ -1,17 +1,18 @@
 
-export default function Tours(props){
+import Tour from './tour/Tour';
 
+export default function Tours({data}){
+    
     return(
         <>
         {
-        props.data.map(select =>
-
-                <div key={select.id}>       
-                    <p>{select.name}</p>
-                    <img src={select.image}/>
-                </div>
-        )
+            data.map(item =>{
+                return(
+                    <Tour  item = {item}/>
+                )
+            })
         }
+       
         </>
     )
 }
